@@ -37,7 +37,7 @@ function dataExtraction(html){
         teamName = teamName.trim();
 
         let teamPath = path.join(process.cwd(),"answer_dir",teamName);
-        
+
         if(fs.existsSync(teamPath) == false)
         {
             fs.mkdirSync(teamPath);
@@ -63,6 +63,8 @@ function dataExtraction(html){
                 {
                     fs.mkdirSync(playerPath);
                 }
+                let filePath = path.join(playerPath,"Details.md");
+                fs.writeFileSync(filePath,"Need to extract");
             }
         }
         console.log("`````````````````````````````````````````````````");
